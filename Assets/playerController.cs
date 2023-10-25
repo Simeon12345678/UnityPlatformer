@@ -7,6 +7,20 @@ public class playerController : MonoBehaviour
     [SerializeField]
     float speed = 8;
 
+    [SerializeField]
+    float jumpForce = 100;
+
+    [SerializeField]
+    Transform groundCheck;
+
+    [SerializeField]
+    float groundRadius = 0.1f;
+
+    [SerializeField]
+    LayerMask groundLayer;
+
+    bool mayJump = true;
+
     void Start()
     {
         
@@ -21,5 +35,31 @@ public class playerController : MonoBehaviour
         Vector2 movement = movementX;
 
         transform.Translate(movement * speed * Time.deltaTime);
+
+        // bool isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
+        bool isGrounded = Physics2D.OverlapBox(groundCheck.position, MakeGroundCheckSize(), 0, groundLayer);
+
+        if (Input.GetAxisRaw("Jump") > 0 && mayJump == true && isGrounded == true)
+        {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            Vector2 jump = Vector2.up * jumpForce;
+
+            rb.AddForce(jump);
+
+            mayJump = false;
+        }
+
+        if (Input.GetAxisRaw("Jump") == 0)
+        {
+            mayJump = true;
+        }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(groundCheck.position, MakeGroundCheckSize());
+    }
+
+    private Vector3 MakeGroundCheckSize() => new Vector3(2.5f, groundRadius);
 }
