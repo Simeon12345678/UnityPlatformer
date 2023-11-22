@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
+using UnityEngine.Animations;
 
 public class playerController : MonoBehaviour
 {
@@ -19,12 +21,19 @@ public class playerController : MonoBehaviour
     [SerializeField]
     LayerMask groundLayer;
 
+    [SerializeField]
+    SpriteRenderer spriteComponant;
+
+    [SerializeField]
+    Animator animator;
+
     bool mayJump = true;
 
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
+
 
     void Update()
     {
@@ -35,6 +44,24 @@ public class playerController : MonoBehaviour
         Vector2 movement = movementX;
 
         transform.Translate(movement * speed * Time.deltaTime);
+
+        animator.SetFloat("Horizontal", moveX);
+
+        if (moveX > 0f)
+        {
+            animator.Play("AnimationForward");
+            spriteComponant.flipX = false;
+
+        }
+        else if (moveX < 0f)
+        {
+            spriteComponant.flipX = true;
+            animator.Play("AnimationForward");
+        }
+        else
+        {
+            animator.Play("AnimationIdling");
+        }
 
         // bool isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
         bool isGrounded = Physics2D.OverlapBox(groundCheck.position, MakeGroundCheckSize(), 0, groundLayer);
@@ -54,6 +81,7 @@ public class playerController : MonoBehaviour
             mayJump = true;
         }
     }
+
 
     private void OnDrawGizmos()
     {
