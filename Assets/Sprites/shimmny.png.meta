@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 15f6e26cfcda45c4a9a9cb034fbffb92
+guid: 8f4703da4e6ea6a4595ff46139b2aeb1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,85 +110,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Shimmy_0
+      name: shimmny_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
+        y: 433
         width: 86
         height: 94
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bd5c02bf484d8046bf426658a9025e7
-      internalID: -2106195784
+      spriteID: 311f21e0cfe4aa94880ebeb8c19d957b
+      internalID: 1752682695
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shimmy_1
+      name: shimmny_1
       rect:
         serializedVersion: 2
-        x: 88
-        y: 4
+        x: 1
+        y: 328
         width: 86
         height: 95
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba2e8354033cb714d9b4a5da10ff618e
-      internalID: -1410620361
+      spriteID: 6ef2d7e59646118429dd5e5210f2d206
+      internalID: 553145588
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shimmy_2
+      name: shimmny_2
       rect:
         serializedVersion: 2
-        x: 176
-        y: 8
+        x: 2
+        y: 224
         width: 85
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21f857b0ec7f8094a83f6d4e5e21827f
-      internalID: 1365857827
+      spriteID: 48a313ff5c135484593398734476f9e5
+      internalID: 1806546636
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shimmy_3
+      name: shimmny_3
       rect:
         serializedVersion: 2
-        x: 262
-        y: 0
-        width: 85
-        height: 105
+        x: 1
+        y: 111
+        width: 86
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 85, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9129da1f2345671419f578e5c34a9208
-      internalID: 1441238766
+      spriteID: cc74aabedbbf39e43ac7452678886c1c
+      internalID: 555943025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shimmny_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 86
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87c0d5f9b1760d74d9b52357a280504a
+      internalID: -1022827560
       vertices: []
       indices: 
       edges: []
@@ -204,10 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Shimmy_0: -2106195784
-      Shimmy_1: -1410620361
-      Shimmy_2: 1365857827
-      Shimmy_3: 1441238766
+      shimmny_0: 1752682695
+      shimmny_1: 553145588
+      shimmny_2: 1806546636
+      shimmny_3: 555943025
+      shimmny_4: -1022827560
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

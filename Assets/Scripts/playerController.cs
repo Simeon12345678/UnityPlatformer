@@ -45,7 +45,8 @@ public class playerController : MonoBehaviour
 
         transform.Translate(movement * speed * Time.deltaTime);
 
-        animator.SetFloat("Horizontal", moveX);
+        // animator.SetFloat("Horizontal", moveX);
+
 
         if (moveX > 0f)
         {
@@ -58,10 +59,16 @@ public class playerController : MonoBehaviour
             spriteComponant.flipX = true;
             animator.Play("AnimationForward");
         }
+        else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        {
+            animator.Play("Attack");
+        }
         else
         {
+
             animator.Play("AnimationIdling");
-        }
+        };
+        
 
         // bool isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
         bool isGrounded = Physics2D.OverlapBox(groundCheck.position, MakeGroundCheckSize(), 0, groundLayer);
