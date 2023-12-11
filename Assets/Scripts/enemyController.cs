@@ -3,7 +3,7 @@ using UnityEngine;
 public class enemyController : MonoBehaviour
 {
     [SerializeField]
-    float speed = 8;
+    GameObject needlePrefab;
 
     [SerializeField]
     Transform ledgeCheckRight;
@@ -12,13 +12,20 @@ public class enemyController : MonoBehaviour
     Transform ledgeCheckLeft;
 
     [SerializeField]
+    Transform AggroLocation;
+
+    [SerializeField]
     float aggroRange = 10f;
 
     [SerializeField]
-    LayerMask ledgeLayer;
+    float speed = 8;
 
     [SerializeField]
     float groundRadius = 0.1f;
+
+    [SerializeField]
+    float timeBetweenShots = 2f;
+    float timeSinceLastShot = 0;
 
     [SerializeField]
     int health = 100;
@@ -27,17 +34,17 @@ public class enemyController : MonoBehaviour
     SpriteRenderer spriteComponant;
 
     [SerializeField]
-    LayerMask layers;
+    LayerMask player;
 
-    GameObject player;
-    bool hasLineOfSight = false;
+    [SerializeField]
+    LayerMask ledgeLayer;
 
     Vector2 movement = new Vector2(1, 0);
 
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+
     }
 
     public void Hit(int damage)
@@ -53,28 +60,7 @@ public class enemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position, aggroRange);
-        Debug.DrawLine(transform.position, player.transform.position, Color.blue);
-        
-        if (ray.collider != null)
-        {
-            print("bro");
-            hasLineOfSight = ray.collider.CompareTag("Player");
-            if (hasLineOfSight)
-            {
-                Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.green);
-            }
-            else
-            {
-                Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
-            }
-        }
-
-        if (hasLineOfSight)
-        {
-            movement = Vector2.zero;
-            Debug.Log("i see you");
-        }
+        IseeYou();
         // i gave up on trying to transform the position of the ledge gameobject while making it work and instead just made one for right and left.
 
         transform.Translate(movement * speed * Time.deltaTime);
@@ -94,9 +80,23 @@ public class enemyController : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private void IseeYou()
     {
+        Collider2D[] lineOfSight = Physics2D.OverlapCircleAll(AggroLocation.position, aggroRange, player);
 
+        foreach (Collider2D player in lineOfSight)
+        {
+            movement = Vector2.zero;
+            Shoot();
+        }
+    }
+
+    private void Shoot()
+    {
+        if (timeSinceLastShot > timeBetweenShots)
+        {
+            Instantiate(needlePrefab, AggroLocation.transform.position, Quaternion.identity);
+        }
     }
 
     private void OnDrawGizmos()
@@ -104,6 +104,7 @@ public class enemyController : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireCube(ledgeCheckRight.position, MakeGroundCheckSize());
         Gizmos.DrawWireCube(ledgeCheckLeft.position, MakeGroundCheckSize());
+        Gizmos.DrawWireSphere(AggroLocation.position, aggroRange);
     }
 
 

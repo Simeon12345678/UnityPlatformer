@@ -4270,7 +4270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 115044905}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: LedgeCheckRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4477,7 +4477,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 840905495}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: LedgeCheckLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7830,6 +7830,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4662098610872421941, guid: 4a4b4b31a54c98d479cd7963c016c3dc, type: 3}
   m_PrefabInstance: {fileID: 3912562936191367327}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1175178058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1175178059}
+  m_Layer: 6
+  m_Name: Aggro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1175178059
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175178058}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1166775907}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1330076386
 GameObject:
   m_ObjectHideFlags: 0
@@ -8182,7 +8213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 821302520962013819, guid: 4a4b4b31a54c98d479cd7963c016c3dc, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 821302520962013819, guid: 4a4b4b31a54c98d479cd7963c016c3dc, type: 3}
       propertyPath: m_TagString
@@ -8242,7 +8273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7279062324685999206, guid: 4a4b4b31a54c98d479cd7963c016c3dc, type: 3}
       propertyPath: health
-      value: 100
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7279062324685999206, guid: 4a4b4b31a54c98d479cd7963c016c3dc, type: 3}
       propertyPath: player
@@ -8265,8 +8296,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1494680096}
     - target: {fileID: 7279062324685999206, guid: 4a4b4b31a54c98d479cd7963c016c3dc, type: 3}
+      propertyPath: AggroLocation
+      value: 
+      objectReference: {fileID: 1175178059}
+    - target: {fileID: 7279062324685999206, guid: 4a4b4b31a54c98d479cd7963c016c3dc, type: 3}
       propertyPath: layers.m_Bits
-      value: 4
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 7279062324685999206, guid: 4a4b4b31a54c98d479cd7963c016c3dc, type: 3}
+      propertyPath: player.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 7279062324685999206, guid: 4a4b4b31a54c98d479cd7963c016c3dc, type: 3}
       propertyPath: ledgeCheckLeft
@@ -8297,6 +8336,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4662098610872421941, guid: 4a4b4b31a54c98d479cd7963c016c3dc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 840905495}
+    - targetCorrespondingSourceObject: {fileID: 4662098610872421941, guid: 4a4b4b31a54c98d479cd7963c016c3dc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1175178059}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a4b4b31a54c98d479cd7963c016c3dc, type: 3}
 --- !u!1660057539 &9223372036854775807
