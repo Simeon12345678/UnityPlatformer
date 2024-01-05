@@ -4387,7 +4387,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  m_Layer: 2
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -7870,7 +7870,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1330076387}
-  m_Layer: 2
+  m_Layer: 7
   m_Name: attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7901,7 +7901,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1494680096}
-  m_Layer: 2
+  m_Layer: 7
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7984,7 +7984,7 @@ GameObject:
   - component: {fileID: 1973428085}
   - component: {fileID: 1973428084}
   - component: {fileID: 1973428086}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -8295,6 +8295,10 @@ PrefabInstance:
       propertyPath: groundCheck
       value: 
       objectReference: {fileID: 1494680096}
+    - target: {fileID: 7279062324685999206, guid: 4a4b4b31a54c98d479cd7963c016c3dc, type: 3}
+      propertyPath: needlePrefab
+      value: 
+      objectReference: {fileID: 7426440123537807128, guid: 8bf9f8e2c840ec946af6022f9e07122b, type: 3}
     - target: {fileID: 7279062324685999206, guid: 4a4b4b31a54c98d479cd7963c016c3dc, type: 3}
       propertyPath: AggroLocation
       value: 

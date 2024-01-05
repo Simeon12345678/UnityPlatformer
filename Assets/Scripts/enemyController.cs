@@ -93,8 +93,11 @@ public class enemyController : MonoBehaviour
 
     private void Shoot()
     {
+        timeSinceLastShot += Time.deltaTime;
+
         if (timeSinceLastShot > timeBetweenShots)
         {
+            timeSinceLastShot = 0;
             Instantiate(needlePrefab, AggroLocation.transform.position, Quaternion.identity);
         }
     }
